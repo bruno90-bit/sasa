@@ -1,7 +1,7 @@
 // Ubah nama dan PIN sesuai kebutuhan.
 const CONFIG = {
-  personName: "SASA",
-  pin: "141104"
+  personName: "SASAちゃん❤️",
+  pin: "16122005"
 };
 
 const screens = [...document.querySelectorAll(".screen")];
