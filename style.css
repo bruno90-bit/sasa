@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+:root {
+  --pink: #f34f83;
+  --pink-dark: #d92d68;
+  --cream: #fffaf4;
+  --ink: #654b54;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 22px;
+  color: var(--cream); font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(135deg, #ffb5b2 0%, #f7a7bd 48%, #f6b5aa 100%);
+  overflow-x: hidden;
+}
+body::before, body::after {
+  content: "♡"; position: fixed; color: #fff7f4; opacity: .28; font-size: 140px; pointer-events: none;
+}
+body::before { top: 4%; left: 4%; transform: rotate(-18deg); }
+body::after { right: 4%; bottom: 3%; transform: rotate(18deg); }
+.hearts { position: fixed; top: 10px; right: 14px; color: #fff8f5; opacity: .7; letter-spacing: 7px; }
+.app { width: min(100%, 440px); position: relative; z-index: 1; }
+.screen { display: none; text-align: center; animation: appear .35s ease; }
+.screen.active { display: block; }
+@keyframes appear { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.eyebrow { text-transform: uppercase; letter-spacing: 3px; font-size: 11px; font-weight: 700; opacity: .8; }
+h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
+h1 { font-size: clamp(32px, 8vw, 46px); line-height: 1.15; margin: 18px 0; }
+h2 { font-size: 28px; }
+.muted { line-height: 1.7; opacity: .9; font-size: 14px; }
+.primary, .secondary {
+  border: 0; border-radius: 999px; padding: 13px 25px; font: 700 14px 'DM Sans', sans-serif;
+  cursor: pointer; transition: transform .15s, box-shadow .15s;
+}
+.primary { color: white; background: var(--pink); box-shadow: 0 7px 16px #b53b6240; }
+.secondary { color: #fff; background: #ffffff24; border: 1px solid #ffffffa6; }
+.primary:hover, .secondary:hover { transform: translateY(-2px); }
+#intro .primary { margin-top: 18px; }
+#pin h2 { margin: 18px 0; }
+.pin-dots { display: flex; justify-content: center; gap: 11px; margin: 24px 0; }
+.pin-dots span { width: 11px; height: 11px; border: 1.5px solid white; border-radius: 50%; }
+.pin-dots span.filled { background: white; }
+.keypad { width: 246px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.keypad button { aspect-ratio: 1; border-radius: 50%; border: 1px solid #ffffffbd; color: white; background: #ffffff18; font-size: 17px; cursor: pointer; }
+.keypad button:hover { background: #ffffff3d; }
+.keypad .utility { font-size: 12px; }
+.hint { font-size: 11px; opacity: .8; line-height: 1.5; margin: 17px auto; }
+.text-button { background: transparent; color: white; border: 0; text-decoration: underline; padding: 8px; cursor: pointer; }
+.letter { background: var(--cream); color: var(--ink); border-radius: 22px; padding: 27px 24px 23px; box-shadow: 0 15px 40px #a3485a22; text-align: left; line-height: 1.8; font-size: 14px; }
+.letter .script { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 22px; margin-top: 0; }
+.letter .signoff { font-size: 15px; margin-top: 20px; }
+.letter .primary { display: block; margin: 22px auto 0; }
+.big-heart { font-size: 55px; line-height: 1; color: white; text-shadow: 0 5px 15px #b53b6240; }
+.actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+#planForm { margin-top: 25px; text-align: left; }
+#planForm label { display: block; font-size: 13px; margin-bottom: 8px; }
+textarea { width: 100%; resize: vertical; border: 1px solid #fff; border-radius: 14px; padding: 14px; font: 14px 'DM Sans', sans-serif; color: var(--ink); background: #fffaf4; outline-color: var(--pink); }
+#planForm button { display: block; margin: 13px auto; }
+dialog { width: min(calc(100% - 32px), 340px); border: 0; border-radius: 22px; padding: 28px; text-align: center; color: var(--ink); box-shadow: 0 18px 60px #4b233544; }
+dialog::backdrop { background: #46233288; backdrop-filter: blur(3px); }
+.modal-icon { color: #57b77b; font-size: 44px; }
+dialog h2 { margin: 10px 0; }
+dialog p { line-height: 1.6; font-size: 14px; }
+dialog .primary { margin-top: 12px; }
+@media (max-width: 360px) { body { padding: 16px; } .keypad { width: 220px; gap: 8px; } .letter { padding: 22px 18px; } }

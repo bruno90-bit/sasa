@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffb1b5">
+  <title>A Little Surprise 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hearts" aria-hidden="true">♡　✦　♡　✧　♡</div>
+  <main class="app">
+    <section class="screen active" id="intro">
+      <p class="eyebrow">a little surprise</p>
+      <h1>I made this website<br>just for <span id="personName">you</span> 💗</h1>
+      <p class="muted">Ada sesuatu yang ingin aku tunjukkan...</p>
+      <button class="primary" data-go="pin">Mulai ✨</button>
+    </section>
+
+    <section class="screen" id="pin">
+      <p class="eyebrow">just between us</p>
+      <h2>Enter Secret PIN</h2>
+      <div class="pin-dots" id="pinDots" aria-label="PIN belum diisi">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="keypad" id="keypad">
+        <button data-digit="1">1</button><button data-digit="2">2</button><button data-digit="3">3</button>
+        <button data-digit="4">4</button><button data-digit="5">5</button><button data-digit="6">6</button>
+        <button data-digit="7">7</button><button data-digit="8">8</button><button data-digit="9">9</button>
+        <button class="utility" data-action="clear">⌫</button><button data-digit="0">0</button><button class="utility" data-action="submit">OK</button>
+      </div>
+      <p class="hint">Masukkan PIN untuk membuka pesan.</p>
+      <button class="text-button" data-go="intro">Kembali</button>
+    </section>
+
+    <section class="screen" id="letters">
+      <p class="eyebrow">a few words for you</p>
+      <article class="letter">
+        <p class="script">Hai <span class="nameInline">kamu</span>,</p>
+        <p>Aku membuat halaman kecil ini karena ada sesuatu yang ingin kusampaikan. Terima kasih sudah menjadi seseorang yang membawa warna dan senyum dalam hari-hariku.</p>
+        <p>Aku senang bisa mengenalmu. Aku tidak ingin terburu-buru, tapi aku ingin jujur tentang perasaanku dan berharap kita bisa saling mengenal lebih dekat.</p>
+        <p class="script signoff">Dari seseorang yang ingin menyampaikan sesuatu 💌</p>
+        <button class="primary" data-go="question">Lanjutkan →</button>
+      </article>
+    </section>
+
+    <section class="screen" id="question">
+      <p class="eyebrow">one little question</p>
+      <div class="big-heart">♡</div>
+      <h1>Will you be<br>my girlfriend? 💗</h1>
+      <p class="muted">Apa pun jawabanmu, aku akan menghargainya.</p>
+      <div class="actions">
+        <button class="primary" data-go="yay">Yes! 💕</button>
+        <button class="secondary" id="noButton">No, thank you</button>
+      </div>
+    </section>
+
+    <section class="screen" id="yay">
+      <p class="eyebrow">one more thing</p>
+      <h1>Yeeey! 💖💖💖</h1>
+      <p class="muted">Terima kasih sudah membaca sampai sini. Kalau kamu mau, tuliskan ide kegiatan sederhana yang ingin kita lakukan bersama.</p>
+      <form id="planForm">
+        <label for="plan">Rencana yang ingin dilakukan</label>
+        <textarea id="plan" rows="3" placeholder="Contoh: jalan-jalan, makan es krim, atau ngobrol..." required></textarea>
+        <button class="primary" type="submit">Kirim ✨</button>
+      </form>
+      <p class="hint">Pesan ini akan ditampilkan di halaman ini saja, tidak dikirim ke server.</p>
+      <button class="text-button" data-go="intro">Mulai lagi</button>
+    </section>
+  </main>
+
+  <dialog id="notice">
+    <div class="modal-icon" id="modalIcon">♡</div>
+    <h2 id="modalTitle">Pesan</h2>
+    <p id="modalText"></p>
+    <button class="primary" id="modalClose">Oke!</button>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
